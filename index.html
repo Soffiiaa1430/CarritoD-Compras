@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Tienda de reloj</title>
+</head>
+
+<body>
+  <header>
+    <img id="logo" src="images/logoB.png" alt="">
+    <div class="container-header">
+      <div class="tr">
+        <div class="input-container">
+          <div class="buscar">
+            <img id="lupa" src="images/lupa.png" alt="">
+            <input placeholder="Buscar" name="buscador" id="searchInput" class="input-field" type="text">
+            <label for="input-field" class="input-label"></label>
+            <span class="input-highlight"></span>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+    <div class="navbar">
+      <ul>
+        <li><a href="index.html" class="nav-link">Principal</a></li>
+        <li><a href="" class="nav-link">Productos</a></li>
+        <li><a href="" class="nav-link">Contactanos</a></li>
+      </ul>
+
+    </div>
+    </div>
+
+    <!-- Agrega el botón de agregar producto en el header -->
+    <button id="open-modal">Agregar Producto</button>
+
+    <!-- Agrega el modal después del header -->
+    <div class="modal" id="product-modal">
+      <span id="close-modal">&times;</span>
+      <input type="text" id="new-product" placeholder="Nombre del producto">
+      <input type="text" id="new-price" placeholder="Precio">
+      <input type="text" id="new-description" placeholder="Descripción">
+      <input type="text" data-category="" id="new-category" placeholder="Categoría">
+      <input type="file" name="" id="new-image" placeholder="Imagen">
+      <button id="btn-new-create">Agregar Producto</button>
+    </div>
+    <div class="dropdown">
+      <button class="btnn">Filtrar Precio</button>
+      <div class="dropdown-content">
+        <button onclick="sortProducts('desc')" class="dropdown-item" type="button"> Mayor a Menor </button>
+        <button onclick="sortProducts('asc')" class="dropdown-item" type="button"> Menor a Mayor </button>
+      </div>
+    </div>
+    <!-- Agrega el botón de abrir el carrito en el header -->
+    <button id="open-cart">Ver Carrito</button>
+
+    <!-- Agrega el modal del carrito después del header -->
+    <div class="cart-products" id="products-id">
+      <p class="close-btn" onclick="closeCart()">X</p>
+      <h3>Carrito</h3>
+      <div class="card-items" id="cart-items"></div>
+      <h2>Total: $<strong id="price-total">0</strong></h2>
+    </div>
+
+  </header>
+  <div>
+    <img class="imgMedioo" src="images/img.PNG" alt="">
+  </div>
+  <nav class="nav" id="nav">
+    <div id="genre-buttons">
+      <ul class="nav-list">
+        <li>
+          <a href="index.html" class="menu__link">
+            <div class="category-container">
+              <img class="size-img" src="images/CatT.png" alt="Todos" width="200" height="200">
+              <span><button id="category-name" class="genre-button" onclick="filterByCategory('Todos')">Todos los
+                  productos</button></span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="menu__link">
+            <div class="category-container">
+              <img class="size-img" src="images/RelojCategoriaH.png" alt="Caballero" width="200" height="200">
+              <span><button id="category-name" class="genre-button"
+                  onclick="filterByCategory('Caballero')">Caballero</button></span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="menu__link">
+            <div class="category-container">
+              <img class="size-img" src="images/ReLOJCategoriaM.png" alt="Dama" width="200" height="200">
+              <span><button id="category-name" class="genre-button"
+                  onclick="filterByCategory('Dama')">Dama</button></span>
+            </div>
+
+          </a>
+        </li>
+        <li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="products-container" class="container"></div>
+  <div class="container">
+    <!--  
+     <div class="card" data-category="">
+        <div class="box">
+            <div class="card-img"><img class="img3" src="" alt=""></div>
+            <div class="card-info">
+                <p class="text-title"></p>
+                <p class="text-body"></p>
+            </div>
+            <div class="card-footer">
+                <div class="cardd">
+                    <span class="text-title"></span>
+                    <div class="card-button">
+                        <button onclick="agregarAlCarritoClicked(event)">
+                            <img class="imgsize" src="">
+                        </button>
+                    </div>
+                </div>
+                <br><br>
+                <div class="c">
+                    <p id="size"><span class="disponibles" data-id=""></span></p>
+                    <div class="sizeCategory"></div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+  </div>
+  <footer>
+
+  </footer>
+
+  <script src="js/category.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/busqueda.js"></script>
+  <script src="js/AgregarProducto.js"></script>
+  <script src="js/carrito.js"></script>
+
+</body>
+
+</html>
